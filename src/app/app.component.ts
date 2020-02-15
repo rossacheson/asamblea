@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
         'No repetir siempre las mismas dinámicas. No cansarlos. No quemar las dinámicas.',
         'No regañar constantemente a los jóvenes.',
         'No dejar que la asamblea sea algo meramente “Social”.',
+        'Comunicar bien con el lider de musica',
         'No te enojes, grites u ofendas. Jamás(aunque se lo merezcan).',
         'No ocultes tus errores. No te excuses. Diles la verdad.',
         'No te tardes mucho en nada. Dinamiza al máximo.',
@@ -70,6 +71,11 @@ export class AppComponent implements OnInit {
                     event.currentIndex);
             }
         }
+    }
+
+    public addNewTip(newTipInput: any) {
+        this.tips.push(newTipInput.value);
+        newTipInput.value = null;
     }
 
     // this doesn't work because the predicate function runs in its own scope

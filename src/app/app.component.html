@@ -358,6 +358,11 @@
         </div>
     </div>
 
+    <form (ngSubmit)="addNewTip(newTipInput)">
+        <input type="text" id="tip-input" name="newTip" #newTipInput>
+        <button type="submit">Agregar</button>
+    </form>
+
     <svg id="clouds"
          alt="Gray Clouds Background"
          xmlns="http://www.w3.org/2000/svg"
