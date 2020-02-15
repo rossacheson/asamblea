@@ -291,13 +291,13 @@
      role="banner">
     <img width="40"
          alt="MJ Logo"
-         src="../assets/images/mj_logo.png" />
+         src="./assets/images/mj_logo.png" />
     <span>Como Planear y Dirigir Una Asamblea</span>
     <div class="spacer"></div>
     <a aria-label="Angular on twitter"
        target="_blank"
        rel="noopener"
-       href="https://twitter.com/angular"
+       href="https://twitter.com/rossacheson"
        title="Twitter">
         <svg id="twitter-logo"
              height="24"
@@ -327,43 +327,36 @@
     </div>
 
     <h2>Tips</h2>
-    <div class="example-container">
-        <div cdkDropList
-             class="example-list"
-             (cdkDropListDropped)="dropTips($event)">
-            <div class="example-box"
-                 *ngFor="let tip of tips"
-                 cdkDrag>{{tip}}</div>
+    <div cdkDropListGroup>
+        <div class="example-container">
+            <h3>Banca</h3>
+
+            <div cdkDropList
+                 [cdkDropListData]="tips"
+                 class="example-list"
+                 (cdkDropListDropped)="dropBetween($event)">
+                <div class="example-box"
+                     *ngFor="let tip of tips"
+                     cdkDrag>{{tip}}</div>
+            </div>
+        </div>
+
+        <div class="example-container">
+            <h3>Los 10 Mejores</h3>
+
+            <div cdkDropList
+                 [cdkDropListData]="mejoresTips"
+                 class="example-list"
+                 id="mejores-container"
+                 (cdkDropListDropped)="dropBetween($event)">
+                <div class="example-box"
+                     *ngFor="let tip of mejoresTips; let i = index;"
+                     cdkDrag>
+                    {{i + 1}}.) {{tip}}
+                    </div>
+            </div>
         </div>
     </div>
-
-    <!-- <div cdkDropListGroup>
-        <div class="example-container">
-            <h2>To do</h2>
-
-            <div cdkDropList
-                 [cdkDropListData]="todo"
-                 class="example-list"
-                 (cdkDropListDropped)="dropBetween($event)">
-                <div class="example-box"
-                     *ngFor="let item of todo"
-                     cdkDrag>{{item}}</div>
-            </div>
-        </div>
-
-        <div class="example-container">
-            <h2>Done</h2>
-
-            <div cdkDropList
-                 [cdkDropListData]="done"
-                 class="example-list"
-                 (cdkDropListDropped)="dropBetween($event)">
-                <div class="example-box"
-                     *ngFor="let item of done"
-                     cdkDrag>{{item}}</div>
-            </div>
-        </div>
-    </div> -->
 
     <svg id="clouds"
          alt="Gray Clouds Background"

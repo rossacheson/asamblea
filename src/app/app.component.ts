@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-    armas = [
+export class AppComponent implements OnInit {
+    public armas = [
         'Planeación',
         'Dinamización',
         'Integración',
         'Sorpresa'
     ];
 
-    tips = [
+    public tips = [
         'Tener un programa (un plan) de lo que se hará durante la asamblea',
         'Pasar tiempo informal con los adolescentes, antes y después de la asamblea(15 a 20 mnts.).',
         'Tener siempre una dinámica, preferentemente con una enseñanza o moraleja de la cual los jóvenes puedan aprender e identificarse.',
@@ -25,6 +25,7 @@ export class AppComponent {
         'Asignar a varios charlistas, y no siempre los mismos.',
         'Las charlas deben de ser “Super - activas” e “Interactivas”.',
         'Asignar a varias personas que dirijan la asamblea y no siempre el mismo.',
+        // tslint:disable-next-line:max-line-length
         'Tener siempre listo el material necesario para la asamblea(ej., Biblias, guitarra, cantoral, proyector, copias de esquemas, cualquier material didáctico, etc.).',
         'Dirigir con entusiasmo(que se note).',
         'Animar constantemente y con una voz fuerte que todos entiendan lo que estás diciendo.',
@@ -45,37 +46,34 @@ export class AppComponent {
         'Pedir a Dios su vision por la asamblea'
     ];
 
-    todo = [
-        'Get to work',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
-    ];
+    public mejoresTips: string[] = [];
 
-    done = [
-        'Get up',
-        'Brush teeth',
-        'Take a shower',
-        'Check e-mail',
-        'Walk dog'
-    ];
+    public ngOnInit() {
+    }
 
-    dropArmas(event: CdkDragDrop<string[]>) {
+    public dropArmas(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.armas, event.previousIndex, event.currentIndex);
     }
 
-    dropTips(event: CdkDragDrop<string[]>) {
+    public dropTips(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.tips, event.previousIndex, event.currentIndex);
     }
 
-    dropBetween(event: CdkDragDrop<string[]>) {
+    public dropBetween(event: CdkDragDrop<string[]>) {
         if (event.previousContainer === event.container) {
             moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         } else {
-            transferArrayItem(event.previousContainer.data,
-                event.container.data,
-                event.previousIndex,
-                event.currentIndex);
+            if (event.container.id !== 'mejores-container' || this.mejoresTips.length < 10) {
+                transferArrayItem(event.previousContainer.data,
+                    event.container.data,
+                    event.previousIndex,
+                    event.currentIndex);
+            }
         }
     }
+
+    // this doesn't work because the predicate function runs in its own scope
+    // public maxTenPredicate(item: CdkDrag<string>) {
+    //     return this.mejoresTips.length < 10;
+    // }
 }
