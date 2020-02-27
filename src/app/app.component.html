@@ -71,8 +71,21 @@
     </div>
 
     <form (ngSubmit)="addNewTip(newTipInput)">
-        <input type="text" id="tip-input" name="newTip" autocomplete="off" #newTipInput>
-        <button type="submit">Agregar</button>
+        <mat-form-field appearance="outline">
+            <mat-label>Agregar otra tip</mat-label>
+            <input matInput
+                   type="text"
+                   id="tip-input"
+                   name="newTip"
+                   autocomplete="off"
+                   #newTipInput
+                   required>
+        </mat-form-field>
+        <button type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled]="!newTipInput.value"
+                style="margin-left: 20px;">Agregar</button>
     </form>
 
     <svg id="clouds"
