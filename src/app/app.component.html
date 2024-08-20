@@ -26,68 +26,8 @@
 </div>
 
 <div class="content" role="main">
-
-    <h2>4 Armas</h2>
-    <div id="armas-container">
-        <div cdkDropList
-             class="info-list"
-             (cdkDropListDropped)="dropArmas($event)">
-            <div class="info-box"
-                 *ngFor="let arma of armas"
-                 cdkDrag>{{arma}}</div>
-        </div>
-    </div>
-
-    <h2>Tips</h2>
-    <div cdkDropListGroup id="tips-activity-container">
-        <div class="tips-list-container">
-            <h3>Banca</h3>
-
-            <div cdkDropList
-                 [cdkDropListData]="tips"
-                 class="info-list"
-                 (cdkDropListDropped)="dropBetween($event)">
-                <div class="info-box"
-                     *ngFor="let tip of tips"
-                     cdkDrag>{{tip}}</div>
-            </div>
-            <form (ngSubmit)="addNewTip(newTipInput)">
-                <mat-form-field appearance="outline">
-                    <mat-label>Agregar otra tip</mat-label>
-                    <input matInput
-                           type="text"
-                           id="tip-input"
-                           name="newTip"
-                           autocomplete="off"
-                           #newTipInput
-                           required>
-                </mat-form-field>
-                <button type="submit"
-                        mat-raised-button
-                        color="primary"
-                        [disabled]="!newTipInput.value"
-                        style="margin-left: 20px;">Agregar</button>
-            </form>
-        </div>
-
-        <div class="tips-list-container">
-            <h3>Los 10 Mejores</h3>
-
-            <div cdkDropList
-                 [cdkDropListData]="mejoresTips"
-                 class="info-list"
-                 id="mejores-container"
-                 (cdkDropListDropped)="dropBetween($event)">
-                <div class="info-box"
-                     *ngFor="let tip of mejoresTips; let i = index;"
-                     cdkDrag>
-                    <div class="enumerator">{{i + 1}}.)</div>
-                    <p>{{tip}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <app-armas></app-armas>
+    <app-tips></app-tips>
 
     <svg id="clouds"
          alt="Gray Clouds Background"
