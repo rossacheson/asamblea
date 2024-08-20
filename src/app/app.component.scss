@@ -54,7 +54,6 @@ svg#clouds {
 
 .toolbar {
     height: 60px;
-    margin: -8px;
     display: flex;
     align-items: center;
     background-color: #1976d2;
@@ -75,82 +74,6 @@ svg#clouds {
 
         &:hover {
             opacity: 0.8;
-        }
-    }
-}
-
-#armas-container {
-  width: 400px;
-  max-width: 100%;
-  margin: 0 25px 25px 0;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.info-list {
-  border: solid 1px #ccc;
-  min-height: 60px;
-  background: white;
-  border-radius: 4px;
-  overflow: hidden;
-  display: block;
-}
-
-.info-box {
-  padding: 20px 10px;
-  border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  cursor: move;
-  background: white;
-  font-size: 14px;
-}
-
-.cdk-drag-preview {
-  box-sizing: border-box;
-  border-radius: 4px;
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-              0 8px 10px 1px rgba(0, 0, 0, 0.14),
-              0 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-
-.cdk-drag-placeholder {
-  opacity: 0;
-}
-
-.cdk-drag-animating {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.info-box:last-child {
-  border: none;
-}
-
-.info-list.cdk-drop-list-dragging .info-box:not(.cdk-drag-placeholder) {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-#tips-activity-container {
-    width: 100%;
-    margin: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 1fr));
-    column-gap: 15px;
-    justify-content: center;
-}
-
-#mejores-container {
-    .info-box {
-        display: grid;
-        grid-template-columns: 20px 1fr;
-        gap: 5px;
-
-        .enumerator {
-            align-self: start;
         }
     }
 }
