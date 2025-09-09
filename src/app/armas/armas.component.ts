@@ -1,13 +1,12 @@
 import {Component} from '@angular/core';
 import {CdkDragDrop, DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop';
-import {CommonModule} from '@angular/common';
+
 
 @Component({
     selector: 'app-armas',
     imports: [
-        CommonModule,
-        DragDropModule,
-    ],
+    DragDropModule
+],
     templateUrl: './armas.component.html',
     styleUrl: './armas.component.scss'
 })
