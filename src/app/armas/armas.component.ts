@@ -4,7 +4,6 @@ import {CommonModule} from '@angular/common';
 
 @Component({
     selector: 'app-armas',
-    standalone: true,
     imports: [
         CommonModule,
         DragDropModule,

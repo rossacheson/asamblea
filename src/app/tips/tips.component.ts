@@ -6,17 +6,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {CommonModule} from '@angular/common';
 
 @Component({
-  selector: 'app-tips',
-  standalone: true,
-  imports: [
-      CommonModule,
-      DragDropModule,
-      FormsModule,
-      MatInputModule,
-      MatButtonModule,
-  ],
-  templateUrl: './tips.component.html',
-  styleUrl: './tips.component.scss'
+    selector: 'app-tips',
+    imports: [
+        CommonModule,
+        DragDropModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+    ],
+    templateUrl: './tips.component.html',
+    styleUrl: './tips.component.scss'
 })
 export class TipsComponent {
     public tips = [
