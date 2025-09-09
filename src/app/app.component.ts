@@ -4,7 +4,6 @@ import {TipsComponent} from './tips/tips.component';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [
         ArmasComponent,
         TipsComponent

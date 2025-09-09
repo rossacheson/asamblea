@@ -1,11 +1,12 @@
 <h2>4 Armas</h2>
 <div id="armas-container">
-    <div cdkDropList
-         class="info-list"
-         (cdkDropListDropped)="dropArmas($event)">
-        <div class="info-box"
-             *ngFor="let arma of armas"
-             cdkDrag>{{ arma }}
-        </div>
-    </div>
+  <div cdkDropList
+    class="info-list"
+    (cdkDropListDropped)="dropArmas($event)">
+    @for (arma of armas; track arma) {
+      <div class="info-box"
+        cdkDrag>{{ arma }}
+      </div>
+    }
+  </div>
 </div>

@@ -3,20 +3,18 @@ import {CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem} from '@
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {CommonModule} from '@angular/common';
+
 
 @Component({
-  selector: 'app-tips',
-  standalone: true,
-  imports: [
-      CommonModule,
-      DragDropModule,
-      FormsModule,
-      MatInputModule,
-      MatButtonModule,
-  ],
-  templateUrl: './tips.component.html',
-  styleUrl: './tips.component.scss'
+    selector: 'app-tips',
+    imports: [
+    DragDropModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule
+],
+    templateUrl: './tips.component.html',
+    styleUrl: './tips.component.scss'
 })
 export class TipsComponent {
     public tips = [
