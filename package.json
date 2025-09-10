@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "ng build --configuration production --base-href /showcase/asamblea/"
+    "build-prod": "ng build --configuration production --base-href /showcase/asamblea/ && (cd dist/asamblea/browser && zip -r ../../asamblea.zip .)"
   },
   "private": true,
   "dependencies": {
